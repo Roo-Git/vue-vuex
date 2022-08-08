@@ -5,7 +5,11 @@ export default createStore({
     counter: 0,
   },
   getters: {},
-  mutations: {},
+  mutations: {
+    increment(state) {
+      state.counter++;
+    },
+  },
   actions: {},
   modules: {},
 });
