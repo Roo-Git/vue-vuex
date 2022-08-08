@@ -65,3 +65,5 @@ export default createStore({
     },
   },
 });
+
+// rootState, rootGetters -> Parámetros para llegar al estado root si fuese necesario desde un modulo
