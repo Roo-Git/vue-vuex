@@ -3,6 +3,7 @@ import { createStore } from "vuex";
 export default createStore({
   state: {
     counter: 0,
+    isLoggedIn: false,
   },
   getters: {
     finalCounter(state) {
@@ -18,6 +19,9 @@ export default createStore({
       }
       return finalCounter;
     },
+    userIsAuthenticated(state) {
+      return state.isLoggedIn;
+    },
   },
   mutations: {
     increment(state) {
@@ -25,6 +29,9 @@ export default createStore({
     },
     increase(state, payload) {
       state.counter = state.counter + payload.value;
+    },
+    setAuth(state, payload) {
+      state.isLoggedIn = payload.isAuth;
     },
   },
   actions: {
@@ -37,6 +44,12 @@ export default createStore({
       setTimeout(function () {
         context.commit("increase", payload);
       }, 2000);
+    },
+    login(context) {
+      context.commit("setAuth", { isAuth: true });
+    },
+    logout(context) {
+      context.commit("setAuth", { isAuth: false });
     },
   },
   modules: {},
