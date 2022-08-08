@@ -1,7 +1,7 @@
 <template>
   <base-container title="Vuex"></base-container>
   <the-counter></the-counter>
-  <favorite-value>hola</favorite-value>
+  <favorite-value></favorite-value>
   <change-counter></change-counter>
 </template>
 
