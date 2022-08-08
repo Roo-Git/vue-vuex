@@ -1,6 +1,6 @@
 <template>
   <button @click="addOne">Add 1</button>
-  <button @click="addTwo">Add 2</button>
+  <button @click="addTwoWithPayload">Add 2</button>
 </template>
 
 <script>
@@ -10,7 +10,7 @@ export default {
     addOne() {
       this.$store.commit("increment");
     },
-    addTwo() {
+    addTwoWithPayload() {
       this.$store.commit("increase", { value: 2 });
     },
   },
